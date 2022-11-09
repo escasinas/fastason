@@ -55,7 +55,7 @@ int main(int argc, char *argv[]) {
                 f1.seq = "";
             }
 	    f1.id = id;
-            f1.header = line;
+	    f1.header = line;
 	    id++;
         } else {
             f1.seq += line;
