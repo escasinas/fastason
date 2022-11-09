@@ -47,7 +47,7 @@ int main(int argc, char *argv[]) {
     std::string line;
     while (getline(inf, line)) {
         if (contains('>', line)) {
-	    // if f1.header and f1.seq are not empty
+            // if f1.header and f1.seq are not empty
             if (f1.header != "" && f1.seq != "") {
                 std::string str_id = std::to_string(f1.id);
                 outf << indent4 + "{" + indent8 + "\"id\": " + str_id + "," + indent8 + "\"header\": \"" + f1.header + "\"," + indent8 + "\"seq\": \"" + f1.seq + "\"" + indent4 + "},";
