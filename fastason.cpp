@@ -16,8 +16,8 @@ int main(int argc, char *argv[]) {
     
     // if no command line aguments, print the help text
     if (argc == 1) {
-	print_help();
-	return 0;
+        print_help();
+        return 0;
     } 
     
     // parse command line argument
@@ -26,11 +26,11 @@ int main(int argc, char *argv[]) {
 
     // if the command line argument is -h or --help, print the help text
     if (input_file == "-h" || input_file == "--help") {
-	print_help();
-	return 0;
+        print_help();
+        return 0;
     } else if (input_file[0] == '-') {
-	std::cout << "Unknown flag, try fastason -h\n";
-	return 0;
+        std::cout << "Unknown flag, try fastason -h\n";
+        return 0;
     }
 
     // json indentations
@@ -49,14 +49,14 @@ int main(int argc, char *argv[]) {
         if (contains('>', line)) {
 	    // if f1.header and f1.seq are not empty
             if (f1.header != "" && f1.seq != "") {
-		std::string str_id = std::to_string(f1.id);
-		outf << indent4 + "{" + indent8 + "\"id\": " + str_id + "," + indent8 + "\"header\": \"" + f1.header + "\"," + indent8 + "\"seq\": \"" + f1.seq + "\"" + indent4 + "},";
+                std::string str_id = std::to_string(f1.id);
+                outf << indent4 + "{" + indent8 + "\"id\": " + str_id + "," + indent8 + "\"header\": \"" + f1.header + "\"," + indent8 + "\"seq\": \"" + f1.seq + "\"" + indent4 + "},";
                 f1.header = "";
                 f1.seq = "";
             }
-	    f1.id = id;
-	    f1.header = line;
-	    id++;
+            f1.id = id;
+            f1.header = line;
+            id++;
         } else {
             f1.seq += line;
         }
